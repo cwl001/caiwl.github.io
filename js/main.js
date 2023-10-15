@@ -877,4 +877,4 @@ document.addEventListener('DOMContentLoaded', function () {
   refreshFn()
   unRefreshFn()
 })
-document.title = "生生";
+document.title = "Gloden Age";
