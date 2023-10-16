@@ -1,0 +1,611 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>DataScurity_assessment | 不来也不去</title><meta name="author" content="cwlyeye"><meta name="copyright" content="cwlyeye"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="网络数据安全风险评估实施学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DataScurity_assessment">
+<meta property="og:url" content="https://caiwl.github.io/post/b4fd19cd.html">
+<meta property="og:site_name" content="不来也不去">
+<meta property="og:description" content="网络数据安全风险评估实施学习">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://caiwl.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2023-10-16T06:34:28.000Z">
+<meta property="article:modified_time" content="2023-10-16T09:19:42.727Z">
+<meta property="article:author" content="cwlyeye">
+<meta property="article:tag" content="DATA SECURITY">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://caiwl.github.io/img/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://caiwl.github.io/post/b4fd19cd.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'DataScurity_assessment',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-10-16 17:19:42'
+}</script><!--include ./head/noscript.pug--><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 0 || hour >= 1
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/universe.css"><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><link rel="stylesheet" href="/css/transpancy.css"><div class="aplayer no-destroy" data-id="8794872855" data-server="netease"  data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="list" data-preload="none" data-autoplay="true" muted></div><svg aria-hidden="true" style="position:absolute; overflow:hidden; width:0; height:0"><symbol id="icon-sun" viewBox="0 0 1024 1024"><path d="M960 512l-128 128v192h-192l-128 128-128-128H192v-192l-128-128 128-128V192h192l128-128 128 128h192v192z" fill="#FFD878" p-id="8420"></path><path d="M736 512a224 224 0 1 0-448 0 224 224 0 1 0 448 0z" fill="#FFE4A9" p-id="8421"></path><path d="M512 109.248L626.752 224H800v173.248L914.752 512 800 626.752V800h-173.248L512 914.752 397.248 800H224v-173.248L109.248 512 224 397.248V224h173.248L512 109.248M512 64l-128 128H192v192l-128 128 128 128v192h192l128 128 128-128h192v-192l128-128-128-128V192h-192l-128-128z" fill="#4D5152" p-id="8422"></path><path d="M512 320c105.888 0 192 86.112 192 192s-86.112 192-192 192-192-86.112-192-192 86.112-192 192-192m0-32a224 224 0 1 0 0 448 224 224 0 0 0 0-448z" fill="#4D5152" p-id="8423"></path></symbol><symbol id="icon-moon" viewBox="0 0 1024 1024"><path d="M611.370667 167.082667a445.013333 445.013333 0 0 1-38.4 161.834666 477.824 477.824 0 0 1-244.736 244.394667 445.141333 445.141333 0 0 1-161.109334 38.058667 85.077333 85.077333 0 0 0-65.066666 135.722666A462.08 462.08 0 1 0 747.093333 102.058667a85.077333 85.077333 0 0 0-135.722666 65.024z" fill="#FFB531" p-id="11345"></path><path d="M329.728 274.133333l35.157333-35.157333a21.333333 21.333333 0 1 0-30.165333-30.165333l-35.157333 35.157333-35.114667-35.157333a21.333333 21.333333 0 0 0-30.165333 30.165333l35.114666 35.157333-35.114666 35.157334a21.333333 21.333333 0 1 0 30.165333 30.165333l35.114667-35.157333 35.157333 35.157333a21.333333 21.333333 0 1 0 30.165333-30.165333z" fill="#030835" p-id="11346"></path></symbol></svg><meta name="generator" content="Hexo 6.3.0"></head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="/css/progress_bar.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> Manifest</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> music</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> photo</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: linear-gradient(45deg, #001f3f, #284165, #59341a, #820224)"><nav id="nav"><span id="blog-info"><a href="/" title="不来也不去"></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> Manifest</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> music</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> photo</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">DataScurity_assessment</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-10-16T06:34:28.000Z" title="发表于 2023-10-16 14:34:28">2023-10-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-10-16T09:19:42.727Z" title="更新于 2023-10-16 17:19:42">2023-10-16</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/DATA-SECURITY/">DATA SECURITY</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">14.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>41分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="DataScurity_assessment"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://caiwl.oss-cn-chengdu.aliyuncs.com/source/img/assessmentimage1.png" alt="IMG_256"></p>
+<h1 id="范围"><a href="#范围" class="headerlink" title="范围"></a>范围</h1><p><strong>指南内容</strong></p>
+<blockquote>
+<p>给出网络数据安全风险的:  </p>
+<blockquote>
+<ul>
+<li>评估思路</li>
+<li>工作流程</li>
+<li>评估内容</li>
+</ul>
+</blockquote>
+</blockquote>
+<p><strong>评估范围</strong></p>
+<blockquote>
+<p>提出从以下方面评估安全风险    </p>
+<blockquote>
+<ul>
+<li>数据安全管理  </li>
+<li>数据处理活动  </li>
+<li>数据安全技术  </li>
+<li>个人信息保护</li>
+</ul>
+</blockquote>
+</blockquote>
+<p><strong>使用主体</strong></p>
+<blockquote>
+<p>指导<strong>数据处理者、第三方机构</strong>开展风险评估<br><strong>有关主观监管部门</strong>组织开展数据安全检查评估提供参考</p>
+</blockquote>
+<h1 id="术语定义"><a href="#术语定义" class="headerlink" title="术语定义"></a>术语定义</h1><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://caiwl.oss-cn-chengdu.aliyuncs.com/source/img/assessmentimage2.png" alt="IMG_256"></p>
+<h1 id="风险评估概述"><a href="#风险评估概述" class="headerlink" title="风险评估概述"></a>风险评估概述</h1><h2 id="评估思路"><a href="#评估思路" class="headerlink" title="评估思路"></a>评估思路</h2><p><strong>原则目的 –&gt; 切入点 –&gt; 实现路径</strong><br>原则目的：</p>
+<blockquote>
+<p>预防为主、主动发现、积极防范  </p>
+<blockquote>
+<p>做评估<br>对数据处理者数据安全保护和数据处理活动进行风险评估<br>寻隐患<br>旨在掌握数据安全总体状况，发现数据安全隐患<br>提建议<br>提出数据安全管理和技术防护措施建议<br>强安全<br>提升数据安全<strong>防攻击、防破坏、防窃取、防泄露、防滥用能力</strong></p>
+</blockquote>
+</blockquote>
+<p>切入点：</p>
+<blockquote>
+<p> 围绕</p>
+<blockquote>
+<p>数据和数据处理活动<br>聚焦<br>可能影响数据的保密性、完整性、可用性和数据处理合法性的安全风险</p>
+</blockquote>
+</blockquote>
+<p>实现路径：</p>
+<blockquote>
+<p>识别要素<br>通过信息调研识别数据处理者、业务和信息系统、数据资产、数据处理活动、安全措施等相关要素<br>识别隐患<br>从数据安全管理、数据处理活动、数据安全技术、个人信息保护等方面识别风险隐患<br>提出建议<br>梳理问题清单，分析数据安全风险、视情评价风险，并给出整改建议  </p>
+</blockquote>
+<h2 id="评估内容"><a href="#评估内容" class="headerlink" title="评估内容"></a>评估内容</h2><p>网络数据安全风险评估，在信息调研基础上围绕<br><strong>数据安全管理、数据处理活动安全、数据安全技术、个人信息保护</strong>等方面开展评估<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://caiwl.oss-cn-chengdu.aliyuncs.com/source/img/assessmentimage3.png" alt="IMG_256"></p>
+<h2 id="评估流程"><a href="#评估流程" class="headerlink" title="评估流程"></a>评估流程</h2><p><strong>数据安全风险评估</strong></p>
+<blockquote>
+<p>评估准备  </p>
+<blockquote>
+<p>1.确定评估目标<br>2.确定评估范围<br>3.组建评估团队<br>4.开展前期准备<br>5.指定评估方案<br>产出 ： 调研表、评估方案</p>
+</blockquote>
+<p>信息调研</p>
+<blockquote>
+<p>1.数据处理者调研<br>2.业务和信息系统调研<br>3.数据资产调研<br>4.数据处理活动调研<br>5.安全措施调研<br>产出 ： 处理者基本情况、业务清单、信息系统清单、数据资产清单、数据处理活动清单、数据流图、安全措施情况</p>
+</blockquote>
+<p>风险识别</p>
+<blockquote>
+<p>1.数据安全管理<br>2.数据处理活动<br>3.数据安全技术<br>4.个人信息处理<br>产出 ： 文档查阅记录文档、个人访谈记录文档、安全核查记录文档、技术检测报告</p>
+</blockquote>
+<p>综合分析</p>
+<blockquote>
+<p>1.梳理问题清单<br>2.风险分析与评价<br>3.提出整改建议<br>产出 ： 数据安全问题清单、数据安全风险、整改建议</p>
+</blockquote>
+<p>评估总结</p>
+<blockquote>
+<p>1.风险评估报告<br>2.安全风险处置<br>产出 ： 风险评估报告</p>
+</blockquote>
+</blockquote>
+<p><strong>自评估</strong><br>数据处理者进行自我评估风险自查的步骤<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://caiwl.oss-cn-chengdu.aliyuncs.com/source/img/assessmentimage4.png" alt="IMG_256"></p>
+<p><strong>检查评估</strong><br>有关部门进行检查评估的具体实施步骤<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://caiwl.oss-cn-chengdu.aliyuncs.com/source/img/assessmentimage5.png" alt="IMG_256"></p>
+<h2 id="评估手段"><a href="#评估手段" class="headerlink" title="评估手段"></a>评估手段</h2><p>开展数据风险评估时，综合采取下列手段进行评估</p>
+<blockquote>
+<p>人员访谈<br>  对相关人员进行访谈，核查制度规章、防护措施、安全责任落实情况<br>文档查验<br>  查验安全管理制度、风险评估报告、等保测评报告等有关材料及制度落实情况的证明材料<br>安全核查<br>  核查网络环境、数据库和大数据平台等相关系统和设备安全策略、配置、防护措施情况<br>技术测试<br>  应用技术工具、渗透测试等手段查看数据资产情况、检查防护措施等有效性</p>
+</blockquote>
+<h1 id="评估准备"><a href="#评估准备" class="headerlink" title="评估准备"></a>评估准备</h1><h2 id="明确评估目标"><a href="#明确评估目标" class="headerlink" title="明确评估目标"></a>明确评估目标</h2><p>数据安全风险评估的目标，包括但不限于:</p>
+<blockquote>
+<p>摸清数据种类、规模、分布等基本情况;<br>摸清数据处理活动的情况;<br>发现可能影响国家安全、公共利益观者个人、组织合法权益的数据安全问题和风险;<br>发现共享、交易、委托处理、向境外提供重要数据等处理活动的数据安全问题和风险;<br>促进完善数据安全保护措施,提升数据安全保护能力。</p>
+</blockquote>
+<h2 id="确定评估范围"><a href="#确定评估范围" class="headerlink" title="确定评估范围"></a>确定评估范围</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://caiwl.oss-cn-chengdu.aliyuncs.com/source/img/assessmentimage6.png" alt="IMG_256"></p>
+<h2 id="组建评估团队"><a href="#组建评估团队" class="headerlink" title="组建评估团队"></a>组建评估团队</h2><blockquote>
+<p>组建检查评估团队<br>  根据评估范围、涉及的行业特征、专业需求，选择具备相关专业能力的评估人员组成评估队伍。</p>
+<blockquote>
+<p>评估队伍<br>应提前完成风险评估文档、检测工具等各项准备工作,并签署保密协议。<br><strong>在检查评估中获取的信息，只能用于检查任务目的和实施数据安全保护</strong></p>
+</blockquote>
+<p>被评估方</p>
+<blockquote>
+<p>应建立专项工作团队，成员—般包括<strong>数据安全负责人和安全、法务、合规、运维、研发、业务、数据、风险</strong>等部门相关人员。<br>专项工作团队应按照要求做好<strong>人员、设备、技术保障</strong>等工作，配合开展风险评估</p>
+</blockquote>
+</blockquote>
+<h2 id="开展前期准备"><a href="#开展前期准备" class="headerlink" title="开展前期准备"></a>开展前期准备</h2><h3 id="指定工作计划"><a href="#指定工作计划" class="headerlink" title="指定工作计划"></a>指定工作计划</h3><blockquote>
+<p>指定工作计划内容<br>评估工作计划内容一般包括：</p>
+<blockquote>
+<p>*工作目的<br>*工作要求<br>*工作内容<br>*工作流程<br>*调研安排<br>*评估总体进度安排</p>
+</blockquote>
+<p>主观监管部门<br>开展检查评估时，主管监管部门<strong>指导评估队伍</strong>按照工作要求制定评估工作计划。</p>
+</blockquote>
+<h3 id="确定评估依据"><a href="#确定评估依据" class="headerlink" title="确定评估依据"></a>确定评估依据</h3><blockquote>
+<p>评估依据包括但不限于</p>
+<blockquote>
+<p><strong>法律</strong>:《网络安全法》《数据安全法》《个人信息保护法》等法律，有关行政法规、司法解释;<br><strong>部门规章</strong>:网信部门及主(监)管部门相关数据安全规章、规范性文件;<br><strong>地方政策</strong>:地方数框安全政策规定和监管要求;<br><strong>相关标准</strong>:数据安全相关国家标准、行业标准等。开展自评估时，本单位数据安全制度规范可作为评估依据之一。</p>
+</blockquote>
+</blockquote>
+<h3 id="确定评估内容"><a href="#确定评估内容" class="headerlink" title="确定评估内容"></a>确定评估内容</h3><p>结合评估目标、范围、依据,针对被评估方的实际情况，确定被评估方每个评估对象适用的评估内容。</p>
+<blockquote>
+<p>评估内容<br>a）数据处理者应针对数据处理活动、数据安全管理、数据安全技术等方面进行风险评估;<br>个人信息保护<br>b)涉及处理个人信息的，应在a)的基础上，对个人信息保护开展风险评估。开展评估工作过程中，可根据<strong>任务要求、评估重点、监管需要、评估依据</strong>等，进一步完善评估内容。</p>
+</blockquote>
+<h3 id="建立评估文档"><a href="#建立评估文档" class="headerlink" title="建立评估文档"></a>建立评估文档</h3><blockquote>
+<p>文档工具准备<br>针对评估目标、范围、依据和内容，准备风险评估调研表、技术测试工具等。<br>规范管理<br>在评估工作开展过程中，应对评估工作相关文件进行<strong>统一编号，并规范管理</strong>。</p>
+</blockquote>
+<h2 id="制定风险评估方案"><a href="#制定风险评估方案" class="headerlink" title="制定风险评估方案"></a>制定风险评估方案</h2><p>组织评估队伍编制风险评估工作方案，方案内容包括但不限于:</p>
+<blockquote>
+<p>评估概述:<br>包括评估目标、评估依据等内容;<br>评估范围:<br>包括评估对象选择方法、评估对象描述、评估范围等;评估内容和方法:包括评估内容、评估准则、评估方法等内容;<br>评估人员:<br>包括评估队伍的组织结构、负责人、成员、职责分工等内容;实施计划:包括时间进度安排、人员安排等内容;<br>工作要求:<br>包括评估工作要求、被评估方保障条件等内容，工作要求如严格依照评估内容及标准规范，规范评估行为，按照尽量不影响被评估方正常工作的原则，制定评估工作应急保障和风险规避措施，明确告知被评估方评估可能产生的风险，严守工作纪律和保密要求等;<br>测试方案:<br>开展技术测试前应明确测试方案，包括采用的技术工具、测试内容、测试环境、应急措施等，测试方应向被测方明示测试可能涉及的安全风险，双方就测试方案达成共识，检查评估时应提前向有关部门报备;评估队伍可邀请行业领域相关数据安全、网络安全专家对评估方案进行评议，重点审核方案内容、风险管控、保护措施、可操作性、技术可行性等，进一步修改完善评估方案后，组织实施风险评估工作。</p>
+</blockquote>
+<h1 id="信息调研"><a href="#信息调研" class="headerlink" title="信息调研"></a>信息调研</h1><h2 id="数据处理者调研"><a href="#数据处理者调研" class="headerlink" title="数据处理者调研"></a>数据处理者调研</h2><p>数据处理者的基本情况包括但不限于:</p>
+<blockquote>
+<p>【基本信息】单位名称、组织机构代码、办公地址、法定代表人信息、人员规模、经营范围、数据安全负责人及其职务、联系方式等基本信息;<br>【单位性质】例如党政机关、事业单位、企业、社会团体等;<br>【是否属于特定类型数据处理者】例如政务数据处理者、大型网络平台运营者、关键信息基础设施运营者等;<br>【所属行业领域】;<br>【业务运营地区】开展数捆处理活动所在国家和地区等;<br>【主要业务范围、业务规模等】;<br>【许可证获取】数据处理相关服务取得行政许可的情况;<br>【资本&#x2F;实际控制人】被评估单位的资本组成和实际控制人情况;<br>【境外资本参与】是否境外上市或计划赴境外上市及境外资本参与情况，或以协议控制(VIE)架构等方式实质性境外上市。</p>
+</blockquote>
+<h2 id="业务和信息系统调研"><a href="#业务和信息系统调研" class="headerlink" title="业务和信息系统调研"></a>业务和信息系统调研</h2><p>业务和信息系统情况包括但不限于:</p>
+<blockquote>
+<p>【网络和信息系统基本情况】包括网络规模、拓扑结构、信息系统等情况和对外连接、运营维护等情况以及是否为关键信<br>息基疏设施等情况;<br>【业务基本信息】包括业务描述、业务类型、服务对象、业务流程、用户规模、覆盖地域、相关部门等基本信息;)<br>【业务涉及个人信息】重要数据或核心数据处理情况;<br>【业务为政务部门或境外用户提供服务情况】;<br>【信息系统、App和小程序情况】包括系统功能、网络安全等级保护备案和测评结论、入口地址、系统连接关系、数据接口、App及小程序名称和版本等;<br>【数据中心和使用云平台情况】;<br>【接入的外部第三方产品、服务或SDK的情况】包括名称、版本、提供方、使用目的、合同协议等。</p>
+</blockquote>
+<h2 id="数据资产调研"><a href="#数据资产调研" class="headerlink" title="数据资产调研"></a>数据资产调研</h2><p>梳理结构化数据资产〈如数据库表等）和非结构化数据资产〈如图表文件等)，摸清数据底数，<font color=#FF0000 >输出数据资产清单</font>。<br>涉及范围包括但不限于以下环境收集和产生的数据:<br><strong>生产环境</strong><br><strong>测试环境</strong><br><strong>备份存储环境</strong><br><strong>云存储环境</strong><br><strong>个人工作终端</strong><br><strong>数据采集设备终端</strong><br>调研内容包括但不限于:</p>
+<blockquote>
+<p>【数据资产情况】包括数据资产类型、数据范围、数据规模、数据形态、数据存储分布、元数据等;<br>【数据分类分级情况】包括数据分类分级规则、数据类别、数据级别、重要数据和核心数据目录情况等;<br>【个人信息情况】包括个人信息种类、规模、敏感程度、数据来源、业务流转及与信息系统的对应关系等;<br>【重要数据情况】包括重要数据种类、规模、行业领域、敏感程度、数据来源、业务流转及与信息系统的对应关系等;<br>【核心数据情况】包括核心数据种类、规模、行业领域、敏感程度、数据来源、业务流转及与信息系统的对应关系等;<br>【其他一般数据情况】</p>
+</blockquote>
+<h2 id="数据处理活动调研"><a href="#数据处理活动调研" class="headerlink" title="数据处理活动调研"></a>数据处理活动调研</h2><p>针对评估对象和范围，<font color=#FF0000 size=4 >梳理数据处理活动清单，验证或绘制数据流图</font>。<br>数据流图应描述数据流转各环节经过的相关方、信息系统，以及每个流动环节涉及的数据类型等。调研内容包括但不限于:</p>
+<blockquote>
+<p>【数据收集情况】如数据收集渠遵、收集方式、数据范围、收集目的、收集频率、外部数据源、合同协议、相关系统，以及在被评估方外部公共场所安芒图像采集、个人身份识别设备的情况等;<br>【数据存储情况】如数据存储方式、数据中心、存储系统〔如数据库,大数据平台、云存储、网盘、存储介质等》、外部存f储机构、存储地点、存储期限、备份冗余策略等;<br>【数据传输情况】如数掘传输途径和方式（如互联网、VPN、物理专线等在线通道情况。采用介质等离线传输情况)、传输协议。内部数据共享、数据接口等;<br>【数据使用和加工情况】如数据使用目的、方式、范围、场景、算法规则、相关系统和部门,数据清洗、转换、标注等加工情况,应用算法推荐技术提供互联网信息服务的情况，核心数据.重要数据或个人信息委托处理、共同处理的情况等;<br>【数据提供情况】如数掘提供〔数据共享、数据交易，因合井、分立、解散、被宣告破产等原因需要转移数据等}的目的、方式、范围、数据接收方、合同协议，对外提供的个人信息和重要数据的种类、数量、楚围、敏感程度、保存期限等;<br>【数据公开情况】如数据公开的目的、方式、对象范围、受众数量、行业、组织、地域等; &gt;【数据删除情况】如数据删除情形、删除方式、数据归档、介质销毁等;<br>【数据出境情况】是否存在个人信息或重要数据出境，如跨境业务、跨境办公、境外上市、使用境外云服务或数据中心、国际交流合作等场景的数据出境情况。</p>
+</blockquote>
+<h2 id="安全措施调研"><a href="#安全措施调研" class="headerlink" title="安全措施调研"></a>安全措施调研</h2><p>调研已有安全措施情况,包括但不限于:</p>
+<blockquote>
+<p>【已有评估】已开展的等级保护测评、商用密码应用安全性评估、安全检测、风险评估、安全认证、合规审计情况，及发现问题的整改情况;<br>【组织人员】数据安全管理组织、人员及制度情况;<br>【安全设备】防火墙、入侵检测、入侵防御等网络安全设备及策略情况;<br>【身份鉴别等】身份鉴别与访问控制情况;<br>【漏洞管理修复】网络安全漏洞管理及修复情况;<br>【远程管理】VPN等远程管理软件的用户及管理情况;<br>【口令管理】设备、系统及用户的账号口令管理情况;<br>【安全技术】<font color=#FF0000 size=4 >加密、脱敏、去标识化等安全技术应用情况</font>;<br>【安全事件】3年内发生的网络和数据安全事件、攻击威胁情况。如事件名称、数据类型和数量、发生原因、级别、处置措施、整改措施等，重大事件需提供事件调查评估报告;近3年发生的数据安全事件处置、记录、整改和上报情况;实际环境中通过检测工具、监测系统、日志审计等发现的威胁;近期公开发布的社会或特定行业威胁事件、威胁预警;其他可能面临的数据泄露、窃取、篡改、破坏&#x2F;损毁、丢失、滥用、非法获取、非法利用、非法提供等安全威胁。</p>
+</blockquote>
+<h1 id="风险识别"><a href="#风险识别" class="headerlink" title="风险识别"></a>风险识别</h1><p><font size=4 >从数据安全管理、数据处理活动、数据安全技术、个人信息保护四方面开展 </font><br>针对各个评估对象，从数据安全管理、数据处理活动、数据安全技术、个人信息保护等方面，<strong>通过多种评估手段识别可能存在的数据安全风险隐患。已开展的检测评估工作报告，可在分析评估结果真实性、有效性基础上视情采纳。</strong></p>
+<h2 id="数据安全管理"><a href="#数据安全管理" class="headerlink" title="数据安全管理"></a>数据安全管理</h2><h3 id="安全管理制度"><a href="#安全管理制度" class="headerlink" title="安全管理制度"></a>安全管理制度</h3><p>明确制度体系和制度落实重点评估内容<br>针对数据安全制度体系建设情况，应重点评估:</p>
+<blockquote>
+<p>【总体制定情况】数据安全总体策略、方针、目标和原则制定情况;<br>【工作规划方案】数据安全管理工作规划或工作方案制定情况;<br>【体系重点内容】<strong>数据分类分级、数据安全评估、数据访问权限管理、数据全生命周期管理、数据安全应急响应、数据合作方管理、数据脱敏、数据加密、数据安全审计、数据资产管理、大数据平台安全等制度</strong>建设情况;<br>【[关键岗位规程】关键岗位的数据安全管理操作规程建设情况;<br>【合规监管衔接】制度内容与国家和行业数据安全法律法规和监管要求的符合情况。  </p>
+</blockquote>
+<blockquote>
+<p>针对<font color=#FF0000 >被评估方</font>数据安全制度落实情况，应重点评估:</p>
+<blockquote>
+<p>【责任制】网络安全责任制、数据安全责任制落实情况，网络安全和数据安全事件责任查处情况;<br>【制度建设】数据安全制度的制定、评审、发布流程建设情况;<br>【审核更新】数据安全制度的定期审核和更新情况;<br>【[制度发布】制度发布范围是否覆盖全面，发布方式是否正规、有效;<br>【制度落实】数据安全制度落实情况，是否具备操作规程、记录表单等制度落实证明材料;<br>【监督检查机制】制度落实监督检查机制</p>
+</blockquote>
+<p>针对<font color=#FF0000 >重要数据处理者</font>,还应当评估以下内容:</p>
+<blockquote>
+<p>【风险评估】对数据处理活动<strong>定期开展致据安全风险评估</strong>的情况;<br>【评估报告】向有关部门报送评估报告情况，<strong>风险评估报告至少应包含处理的重要数据的种类、数量，开展数据处理活动的情况，面临的致据安全风险及其应对措施等</strong>。</p>
+</blockquote>
+</blockquote>
+<h3 id="安全组织机构"><a href="#安全组织机构" class="headerlink" title="安全组织机构"></a>安全组织机构</h3><p>明确组织架构和岗位设置重点评估内容<br>针对被评估方数据安全组织架构建设情况，应重点评估:</p>
+<blockquote>
+<p>【机构职能】数据安全管理机构和职能设置情况;<br>【负责人职能】数据安全负责人和职能设置情况;<br>【高层人员决策】单位高层人员参与数据安全决策情况;<br>【内部安全监督】对组织内部的数据安全管理执行情况、数据操作行为等进行安全监督的情况;<br>【需求适应性】数据安全人员和资源投入情况与组织数据安全保护需求适应性。</p>
+</blockquote>
+<p>针对被评估方数据安全岗位设置情况,应重点评估:</p>
+<blockquote>
+<p>【关键岗位设置和原则落实】<strong>数据库管理员、操作员及安全审计人员、安全运维人员、数据备份管理人员、数据恢复管理人员等数据安全</strong>关键岗位设置情况，及<strong>职责分离、专人专岗</strong>等原则落实情况;<br>【相关部门人员设置和管理执行】<strong>业务部门、信息系统建设部门、信息系统运维部门数据安全人员设置</strong>情况，数据安全管理要求执行情况;<br>【关键岗位双人双岗情况】<strong>特权账户所有者、关键数据处理岗位等</strong>数据安全关键岗位设立<strong>双人双岗</strong>情况;</p>
+</blockquote>
+<h3 id="分类分级管理"><a href="#分类分级管理" class="headerlink" title="分类分级管理"></a>分类分级管理</h3><p>明确数据资产管理、分类分级制度及保护重点评估内容</p>
+<blockquote>
+<p>针对数据资产管理情况,应重点评估:</p>
+<blockquote>
+<p>【数据资产台账】数据资产台账建设、更新、维护情况;<br>【数据资产梳理全面性】数据资产梳理是否全面，<strong>是否能够覆盖数据库、大数据存储组件、云上对象存储或网盘等存储工具及办公计算机、U盘、光盘等存储介质中的数据</strong>;<br>【数据资产清单】通过数据资产管理等工具对数据资产清单及时更新、维护的情况;<br>【技术扫描识别】采用技术手段定期对数据资产进行扫描的情况，及发现识别个人信息、重要数据的能力。</p>
+</blockquote>
+<p>针对数据分类分级制度建设情况,应重点评估:</p>
+<blockquote>
+<p>【分类分级保护制度】数据分类分级保护制度建设情况，是否符合国家、行业和地方的数据分类分级规范要求;<br>【分类分级管理和目录建设】数据分类分级管理情况，及核心数据和重要数据目录建立及维护情况;<br>【制度明确和措施落实】是否在<strong>相关制度中明确了数据分类管理、分级保护策略，数据分类分级保护措施是否落实在数据访问权限申请、保护措施部署等方面</strong>;<br>【变更和审核】数据分类分级变更和审核流程情况;<br>【个人信息分类分级】个人信息分类分级管理情况。</p>
+</blockquote>
+<p>针对数据分类分级保护情况,应重点评估:</p>
+<blockquote>
+<p>【明确标识】是否对处理的<strong>个人信息和重要数据进行明确标识</strong>;<br>【数据级别覆盖】按熙数据级别建设覆盖全流程数据处理活动的安全措施情况;<br>【工具建设】数据分类分级标识或资产管理工具建设情况，是否具有自动化标识能力，是否具有数据标识结果发布、审核等能力;<br>【重要数据评估】按照相关<strong>重要数据目录或规定</strong>，评估重要数据并进行重点保护的情况;<br>【核心数据评估】按熙相关<strong>核心数据目录或规定</strong>，评估核心数据并进行严格管理的情况。</p>
+</blockquote>
+</blockquote>
+<h3 id="人员安全管理"><a href="#人员安全管理" class="headerlink" title="人员安全管理"></a>人员安全管理</h3><p>明确人员录用、保密协议、转岗离岗、安全培训重点评估内容</p>
+<blockquote>
+<p>针对人员录用情况,应重点评估:</p>
+<blockquote>
+<p>【背景调查】<strong>重要岗位员工</strong>录用前背景调查情况;<br>【录用考核】<strong>数据处理关键岗位人员</strong>录用，对其数据安全意识或专业能力进行考核的情况。</p>
+</blockquote>
+<p>针对保密协议签订情况,应重点评估:</p>
+<blockquote>
+<p>【明确禁止行为】员工工作纪律和工作要求中是否明确规定员工禁止的数据安全相关行为;<br>【签订人员覆盖面】是否<strong>与所有涉及数据服务的人员</strong>签订<strong>安全责任承诺或保密协议</strong>，与<strong>数据安全关键岗位人员</strong>签订数据安全<strong>岗位责任协议</strong>;<br>【明确调离或终止劳动合同保密义务】在<strong>重要岗位人员</strong>调离或终止劳动合同前，是否明确并告知其继续履行有关信息的保密义务要求，并签订保密承诺书。</p>
+</blockquote>
+<p>针对人员转岗离岗管理情况,应重点评估:</p>
+<blockquote>
+<p>【转岗离岗权限终止或变更】在人员转岗或离岗时，是否及时终止或变更完成相关人员<strong>数据操作权限</strong>，并<strong>明确有关人员后续的数据保护管理权限和保密责任</strong>;<br>【离岗权限收回并告知保密义务】对终止劳动合同的人员，是否及时终止并收回其<strong>系统权限及数据权限</strong>，<strong>明确告知其继续履行有关信息的保密义务要求</strong>。</p>
+</blockquote>
+<p>针对人员数据安全培训情况,应重点评估:</p>
+<blockquote>
+<p>【培训制定更新】数据安全培训计划制定、更新情况;<br>【安全意识教育培训】开展数据安全意识教育培训,并保留相关记录情况;<br>【数据安全专项培训】是否对数据安全岗位人员<strong>每年至少进行1次数据安全专项培训</strong>，对关键岗位人员进行<strong>定期数据安全技能考核情况</strong>。</p>
+</blockquote>
+</blockquote>
+<h3 id="合作外包管理"><a href="#合作外包管理" class="headerlink" title="合作外包管理"></a>合作外包管理</h3><p>明确合作方管理机制、协议约束、访问权限重点评估内容</p>
+<blockquote>
+<p>针对合作方管理机制建设情况，应重点评估:</p>
+<blockquote>
+<p>【合作方管理机制】数据合作方安全管理机制建设情况，如对合作方或外包服务机构的<strong>选择、评价、管理、监督机制</strong>;<br>【合作方安全能力评估】是否对数据合作方或外包服务机构的安全能力进行评估;<br>【外包安全监督检查】对外包服务机构、人员履行安全责任义务的监督检查情况;<br>【外包现场服务安全】外包人员现场服务安全管理情况;<br>【外包技术依赖】对外包服务商的技术依赖程度，对委托处理数据的控制和管理能力。</p>
+</blockquote>
+<p>针对合作协议约束情况，应重点评估:</p>
+<blockquote>
+<p>【数据使用行为约束】服务合同、承诺及安全保密协议情况，是否通过合同协议等方式对接收、使用本单位数据的合作方的数据使用行为进行约束;<br>【合作协议重点内容明确】是否在<strong>合作协议中明确了数据处理目的、方式、范围，安全保护责任、数据返还或销毁要求、保密约定及违约责任和处罚条款等</strong>;<br>【数据安全责任界定】合同、协议中，数据处理者与合作方、外包服务商间的数据安全责任界定情况。</p>
+</blockquote>
+<p>针对外包人员访问权限管理情况，应重点评估:</p>
+<blockquote>
+<p>【最小必要范围】外包人员对数据与系统的访问、修改权限是否限于最小必要范围;<br>【环境权限和数据开放程度】能够在测试环境下或使用测试数据完成的，是否向外包人员开放了生产环境权限或真实数据;【数据导出或外发监督管理】外包人员数据导出操作或数据外发操作的监督管理情况;<br>【敏感数据监测】外包人员对敏感数据的访问及操作能否被实时监督或监测;<br>【账号及访问权限管理】数据外包服务账号及访间权限管理情况;<br>【远程访问操作】外包人员远程访问操作系统或数据的情况。</p>
+</blockquote>
+<p><font color=#FF0000 >针对第三方接入与致据回收情况,应重点评估</font>:</p>
+<blockquote>
+<p>【技术检测或评估报告】是否<strong>对合作方接入的系统、使用的技术工具进行了技术检测，或合作方提供专业第三方机构评估的数据安全报告</strong>，避免引入木马、后门等;<br>【合作结束数据回收和删除】为完成技术或服务目的向合作方提供的数据，在合作结束后是否进行了回收，是否要求合作方对数据进行删除;<br>【外包到期账号数据管理】外包服务到期后，账号注销、数据回收、数据删除销毁等管理情况;<br>【合作结束系统权限接口管理】为完成技术或服务目的向合作方提供的系统权限和接口，在合作结束后是否进行了停用或下线。</p>
+</blockquote>
+<p><font color=#FF0000 >涉及政务部门或针对法律、法规授权的具有管理公共事务职能的组织委托处理政务数据</font>的情形，应重点评估;</p>
+<blockquote>
+<p>【审批程序和合同监督】委托他人建设、维护电子政务系统，存储、加工政务数据，是否经过严格的批准程序，是否以合同等手段监督受托方履行相应的数据安全保护义务;<br>【数据安全保护义务履行】政务数据受托方依照法律、法规的规定和合同约定履行数据安全保护义务的情况，是否擅自留存、使用、泄露或者向他人提供政务数据;<br>【安全措施符合要求】支撑电子政务相关系统运行的相关服务或系统的安全措施，是否满足电子政务系统管理和相关安全要求。</p>
+</blockquote>
+</blockquote>
+<h3 id="安全威胁和应急管理"><a href="#安全威胁和应急管理" class="headerlink" title="安全威胁和应急管理"></a>安全威胁和应急管理</h3><p>明确安全威胁和事件，安全应急管理重点评估内容</p>
+<blockquote>
+<p>识别安全威胁和安全事件情况，包括但不限于:</p>
+<blockquote>
+<p>【安全事件信息及处理情况】<strong>近3年</strong>发生的网络安全或数据安全事件信息及其处置、记录、整改和上报情况，如事件名称、影响对象、发生时间和频次、发生原因、外部威胁、事件级别、处置措施、整改措施等，<strong>重大事件需提供事件调查评估报告</strong>;<br>【安全威胁、违规行为统计】<strong>近1年</strong>通过安全工具、日志审计、安全测评、合规自查等发现的安全威胁、违规行为及其频率统计;<br>【攻击威胁情况】实际环境中通过监测系统、检测工具等发现的攻击威胁情况;<br>【威胁事件公布或曝光】近期公布或曝光的同行业、类似业务模式的威胁事件、威胁预警。</p>
+</blockquote>
+<p>针对数据安全应急管理情况，重点评估:</p>
+<blockquote>
+<p>【应急预案制定和修订】数据安全事件应急预案制定和修订情况，是否定义数据安全事件类型，明确不同类别级别事件的处置流程和方法;<br>【应急响应及处置机制】数据安全应急响应及处置机制建设情况，发生数据安全事件时是否立即采取处置措施，是否按照规定及时告知用户并向有关主管部门报告;<br>【应急演练】数据安全事件应急演练情况;<br>【安全风险监测】数据处理活动安全风险监测情况，发现数据安全缺陷、漏洞等风险时，是否立即采取补救措施;<br>【安全事件危害告知】安全事件对个人、其他组织造成危害的，<strong>是否将安全事件和风险情况、危害后果、已经采取的补救措施等通知利害关系人，无法通知的是否采取公告等其他方式告知</strong>;<br>【投诉举报渠道】面向社会提供服务的数据处理者是否建立便捷的数据安全相关投诉举报渠道，以及<strong>近3年的数据安全投诉举报处置、记录和整改情况，是否存在侵害用户个人信息合法权益的情况</strong>。</p>
+</blockquote>
+</blockquote>
+<h3 id="开发运维管理"><a href="#开发运维管理" class="headerlink" title="开发运维管理"></a>开发运维管理</h3><p>明确开发运维管理重点评估内容</p>
+<blockquote>
+<p>针对开发运维管理情况,应重点评估:</p>
+<blockquote>
+<p>【新应用开发审核流程】新应用开发审核流程建设情况，进行数据处理需求安全合规审核情况;<br>【开发程序流程】开发程序的修改、更新、发布的批准授权和版本控制流程;<br>【工程安全管理】工程实施、验收、交付的安全管理情况;<br>【代码和测试数据安全管理】对开发代码、测试数据的安全管理情况;<br>【上线安全评估】产品或业务上线前进行安全评估的情况;<br>【开发环境和实际环境控制】开发测试环境和实际运行环境的隔离情况、测试数据和测试结果的控制情况;<br>【开发测试数据去标识化】<strong>开发测试中使用真实个人信息、核心数据、重要数据情况，开发测试前对相关数据进行去标识化、脱敏处理(测试确需信息除外)情况</strong>;<br>【人员监督审计】对开发和运维人员行为的监督和审计情况;<br>【远程运维安全防护】远程运维的审批、管理和安全防护措施;<br>【开源技术资料完备性】第三方SDK或开源软件的运行维护、二次开发等技术资料完备性。</p>
+</blockquote>
+</blockquote>
+<h3 id="云数据安全"><a href="#云数据安全" class="headerlink" title="云数据安全"></a>云数据安全</h3><p>明确云数据安全重点评估内容</p>
+<blockquote>
+<p>被评估对象使用云计算服务时，应重点评估:</p>
+<blockquote>
+<p>【安全责任划分】云服务提供者、第三方厂商、云相户的安全责任划分和落实情况;<br>【上云数据安全】上云数据的安全审核和管理情况;<br>【云安全产品服务】云安全产品服务的使用和配置情况;<br>【云上操作安全审计】对云上操作行为的安全审计情况;<br>【云用户账号和权限】云用户账号和权限管理情况;<br>【私有云远程运维安全】私有云远程运维安全管理情况;<br>【云上用户个人信息安全】云上承载用户个人信息、重要数据、核心数据情况，是否<strong>对重要数据、敏感个人信息实施增强的安全防护</strong>;</p>
+</blockquote>
+<p>被评估对象是云计算服务提供者时,应重点评估:</p>
+<blockquote>
+<p>【云平台间边界防护】公有云、社区云等不同类型云平台间边界防护情况;<br>【数据传输安全】租户与云平台、数据中心间数据传输安全防护情况;<br>【安全责任界面划定】针对不同服务模式、部署模式、产品和服务。云平台对相关方的数据安全责任界面划定情况及合法合规性;<br>【与租户划清责任边界】是否通过合同协议等方式，与租户划清云数据安全责任边界，并履行相应数据安全责任;<br>【提供傈障措施】发生数据安全凤险或事件时。为租户提供事件报告、应急处置等协同保障措施情况;<br>【租户数据收集】收集租户数据情况，是否<strong>识别重要数据、个人信息，收集方式是否安全合理，是否存在超范围收集</strong>;<br>【产品安全配置】计算、存储、网络、数据库、安全等产品安全配置情况;<br>【第三方组件】第三方组件安全核查、漏洞修复情况;<br>【云产晶漏涧更新推送】云产品漏洞更新和推送情况。是否会及时提供补丁推送、跟进用户漏洞更新等情况;<br>【云平台基础安全防护】云平台提供的基础安全防护能力情况;<br>【高凤险操作提示】云产品对用户高风险操作的提示情况;<br>【身份管理和访问控制】对云租户的身份管理和访问控制情况;<br>【数据安全制度指施】云平台保障租户数据安全的相关制度和安全措施;<br>【云数据删除】约定服务到期、欠费、提前终止等情形下，云数据删除和个人信息权益保障等情况;<br>【云数据备份恢复机制】云数据备份和恢复机制是否完善，<strong>数据备份策略、备份周期、备份存储、数据恢复策略、恢复验证等</strong>是香符合安全需要;<br>【风险和安全评估】云平台开展数据安全风险评估、云计算服务安全评估等情况;<br>【云平台基础设施】云平台基础设施部署和运维情况;<br>【云安全管理中心管控】云安全管理中心管控情况;<br>【云数据迁移安全】云数据迁移安全保障情况;<br>【云平台数据出境】云平台数据出境安全情况。</p>
+</blockquote>
+</blockquote>
+<h2 id="数据处理活动"><a href="#数据处理活动" class="headerlink" title="数据处理活动"></a>数据处理活动</h2><h3 id="数据收集"><a href="#数据收集" class="headerlink" title="数据收集"></a>数据收集</h3><p>明确数据收集合法正当性、通过第三方收集数据、数据质量控制重点评估内容</p>
+<blockquote>
+<p>针对数据收集合法正当性情况,应重点评估:</p>
+<blockquote>
+<p>【合法正当性】数据收集的合法性、正当性，是否存在窃取、超范围收集、未经合法授权收集或者以其他非法方式获取数据的情况，数据收集目的和范围是否合法;<br>【违规收集】违反法律、行政法规关于收集使用数据目的、范围相关要求，收集数据的情况。</p>
+</blockquote>
+<p>重点评估从外部机构收集数据的安全情况:</p>
+<blockquote>
+<p>【合同协议约定】通过合同协议等合法方式，<strong>约定从外部机构收集的数据范围、收集方式、使用目的和授权同意情况</strong>;<br>【外部数据源鉴别记录】对外部数据源进行鉴别和记录的情况;<br>【真实性可靠性】数据的真实性及来源的可靠性;<br>【外部数据收集审核】对外部收集数据的合法性、安全性和授权同意情况进行审核的情况。</p>
+</blockquote>
+<p>针对数据质量控制情况，应重点评估:</p>
+<blockquote>
+<p>【数据质量管理制度】数据质量管理制度建设情况，对<strong>收集数据质量和管理措施</strong>是否进行明确要求;<br>【安全管理和操作规范】安全管理和操作规范对<strong>数据清洗、转换和加载等行为</strong>是否进行明确要求;<br>【数据质量管理监控】数据质量管理和监控的情况，对<strong>异常数据及时告警或更正</strong>采取的手段措施;<br>【安全措施应用】收集数据监控、过程记录等情况，以及安全措施应用情况;<br>【真实准确完整性】采用人工检查、自动检查或其他技术手段对数据的真实性、准确性、完整性校验情况</p>
+</blockquote>
+<p>针对数捆收集方式,应重点评估:</p>
+<blockquote>
+<p>【自动化工具违规】采用自动化工具访问、收集数据的，违反法律、行政法规、部门规章或协议约定情况，侵犯他人知识产权等合法权益情况;<br>【自动化工具收集范围】采用自动化工具收集时，对数据收集范围的明确情况，收集与提供服务无关数据的情况;<br>【自动化工具带来影响】采用自动化工具收集数据以及该方式对网络服务的性能、功能带来的影响情况;<br>【人工采集严格管理】通过人工方式采集数据的，是否<strong>对数据采集人员严格管理，要求将采集数据直接报送到相关人员或系统，采集任务完成后及时删除采集人员留存的数据</strong>。</p>
+</blockquote>
+<p>针对数据收集设备及环境安全情况,应重点评估:</p>
+<blockquote>
+<p>【安全漏洞】检测数据收集终端或设备的安全漏洞，是否存在数椐泄露风险;<br>【人工采集数据泄露风险】人工采集数据泄露风险，通过人员权限管控、信息碎片化等方式，对人工采集数据环境进行安全管控情况;<br>【客户端敏感信息留存风险】客户端敏感信息留存风险，检测App、Web等客户端完成相关业务后，是否留存敏感个人信息或重要数据。</p>
+</blockquote>
+</blockquote>
+<h3 id="数据存储"><a href="#数据存储" class="headerlink" title="数据存储"></a>数据存储</h3><p>明确数据存储适当性、逻辑存储安全、介质安全重点评估内容</p>
+<blockquote>
+<p>针对数据存储适当性，应重点评估:</p>
+<blockquote>
+<p>【策略规程落实】数据存储安全策略和操作规程的建设落实情况;<br>【适当性】存储位置、期限、方式的适当性;<br>【永久存储必要性]永久存储数据类型的必要性。</p>
+</blockquote>
+<p>针对逻辑存储安全情况,应重点评估:</p>
+<blockquote>
+<p>【数据库落实】数据库的<strong>账号权限管理、访问控制、日志管理、加密管理、版本升级</strong>等方面要求的落实情况;<br>【检测安全漏洞】检测逻辑存储系统安全漏洞,查看安全漏洞修复、处置情况;<br>【限制人员操作行为】实施限制数据库管理、运维等人员操作行为的安全管理措施情况;<br>【分开存储情况】<strong>脱敏后的数据与可用于恢复数据的信息分开存储的情况</strong>;<br>【加密有效性】对<strong>敏感个人信息、重要数据进行加密存储情况</strong>及<strong>加密措施有效性</strong>;<br>【数据存储外部区域安全】数据存储在第三方云平台、数据中心等外部区域的安全管理、访问控制情况;<br>【分域分级差异化存储】<strong>根据安全级别、重要性、量级、使用频率等因素</strong>，对数据分域分级差异化存储安全管控情况;<br>【防勒索检测机制】<strong>重要数据和核心数据存储的防勒索检测机制情况</strong>。</p>
+</blockquote>
+<p>针对存储介质安全情况，应重点评估:</p>
+<blockquote>
+<p>【存储介质标识情况】存储介质（含移动存储介质，下同）的使用、管理及资产标识情况;<br>【存储介质安全规范】存储介质安全管理规范建设情况，是否明确对存储介质存储数据的安全要求;<br>【存储介质安全检查】对存储介质进行定期或随机性安全检查情况;<br>【存储介质记录审计】存储介质访问和使用行为的记录和审计情况。</p>
+</blockquote>
+</blockquote>
+<h3 id="数据传输"><a href="#数据传输" class="headerlink" title="数据传输"></a>数据传输</h3><p>明确传输链路安全性、可靠性重点评估内容</p>
+<blockquote>
+<p>针对数据传输链路安全性，应重点评估:</p>
+<blockquote>
+<p>【策略规程落实】数据传输安全策略和操作规程的建设落实情况;<br>【加密措施有效性】敏感个人信息和重要数据传输加密情况及加密措施有效性，<strong>是否选用安全的密码算法</strong>;<br>【传输完整性】个人信息和重要数据传输进行完整性保护情况;<br>【传输通道防护措施】数据传输通道<strong>部署身份鉴别、安全配置、密码算法配置、密钥管理等</strong>防护措施情况;<br>【传输记录和安全审计】数据传输、接收的记录和安全审计情况;<br>【安全措施】采取安全传输协议等安全措拖情况;<br>【异常传输检测及处置】数据异常传输检测发现及处置情况;<br>【跨组织传输管理和安全技术】制定数据跨组织传输管理规则，及跨组织数据传输安全技术措施建立情况。</p>
+</blockquote>
+<p>针对数据传输链路的可靠性，应重点评估:</p>
+<blockquote>
+<p>【[网络传输链路可用】网络传输链路的可用情况，包括<strong>对关键网络传输链路、网络设备节点实行冗余建设，建立容灾方案和宕机替代方案</strong>等情况;<br>【点对点传输第三方缓存】点对点传输中是否存在传输经过第三方、被第三方缓存情况。</p>
+</blockquote>
+</blockquote>
+<h3 id="数据使用和加工"><a href="#数据使用和加工" class="headerlink" title="数据使用和加工"></a>数据使用和加工</h3><p>明确数据使用和加工合法性、数据正当使用重点评估内容</p>
+<blockquote>
+<p>针对数据使用和加工合法性，应重点评估:</p>
+<blockquote>
+<p>【合法性】使用和加工数据时，遵守法律、行政法规，尊重社会公德和伦理，遵守商业道德和职业道德等情况;<br>【危害国家、个人、组织安全】是否存在危害国家安全、公共利益的数据使用和加工行为，损害个人、组织合法权益的数据使用和加工行为;<br>【违法信息】是否制作、发布、复制、传播违法信息;<br>【算法推荐、深度合成、生成式AI技术合规性】<strong>应用算法推荐技术、深度合成技术提供互联网信息服务、生成式AI技术提供服务的</strong>，是否按照《互联网信息服务算法推荐管理规定》《互联网信息服务深度合成管理规定》等规定开展相关工作。</p>
+</blockquote>
+<p>针对数据正当使用情况,应重点评估:</p>
+<blockquote>
+<p>【策略规程落实】数据使用加工安全策略和操作规程的建设落实情况;<br>【数据使用授权】数据使用是否获得数据提供方、数据主体等相关方授权;<br>【使用行为与承诺协议一致性】数据使用行为与承诺或用户协议的一致性;<br>【数据新技术】开展数据处理活动以及研究开发数据新技术，<strong>是否有利于促进经济社会发展，增进人民福祉，符合社会公德和伦理</strong>;<br>【数据使用业务风险】使用数据开展用户画像、信息推送、内容呈现等业务，造成<strong>用户受不公平的价格待遇、平台公共竞争秩序受影响、平台内劳动者正当权益受损害</strong>等风险情况;<br>【使用加工与行政许可一致性】数据使用加工目的、方式、范围，与行政许可、合同授权等的一致性;<br>【滥用情况】是否存在个人信息和重要数据滥用情况。</p>
+</blockquote>
+<p>针对数据导入导出情况，应重点评估;</p>
+<blockquote>
+<p>【导出安全评估和授权审批】数据导出安全评估和授权审批流程建设情况;<br>【导入导出审计和日志管理】导入导出审计策略和日志管理机制建设情况;<br>【导出权限管理和操作记录】导出权限管理、导出操作记录情况;<br>【导出数据存储介质】导出数据的存储介质的<strong>标识、加密、使用、销毁</strong>管理情况;<br>【导出行为安全审计】定期对个人信息和重要数据导出行为进行安全审计情况;<br>【导入数据校验】对导入数据的格式、安全性和完整性校验情况。</p>
+</blockquote>
+<p>针对数据处理环境安全情况，应重点评估:</p>
+<blockquote>
+<p>【数据处理环境安全措施】数据处理环境<strong>设置身份鉴别、访问控制、隔离存储、加密、脱敏等</strong>安全措施情况;<br>【大数据平台安全配置及核查】大数据平台等处理组件按照基线要求进行安全配置、配置核查情况;<br>【处理环境安全漏洞】处理环境中的安全漏洞情况，已发现漏洞的处置情况。</p>
+</blockquote>
+<p>针对数据使用和加工安全措施情况，应重点评估:</p>
+<blockquote>
+<p>【数据加工安全保护】在<strong>数据清洗、转换、建模、分析、挖掘等加工过程</strong>中，对数据特别是个人信息和重要数据的保护情况;<br>【防泄漏措施】数据<strong>防泄漏</strong>措施建设情况;<br>【数据使用加工安全保护措施】数据使用加工过程中采取的<strong>数据脱敏、水印溯源</strong>等安全保护措施情况;<br>【数据访问与操作】数据访问与操作行为的<strong>最小化授权、访问控制、审批</strong>等管理情况;<br>【数据使用权限管理】数据使用权限管理情况，如<strong>是否存在未授权访问、超范围授权、权限未及时收回、特权账号设置不合理等情况</strong>;<br>【数据加工定期审计】数据加工过程中对个人信息、重要数据等敏感数据的操作<strong>行为记录、定期审计</strong>情况;<br>【高风险行为审计及回溯】<strong>高风险行为审计及回溯</strong>工作开展情况;<br>【委托加工数据安全】委托加工数据的，是否明确约定受托方的安全保护义务，并<strong>采取技术措施或其他约束手段防止受托方非法留存、扩散数据</strong>。</p>
+</blockquote>
+</blockquote>
+<h3 id="数据提供"><a href="#数据提供" class="headerlink" title="数据提供"></a>数据提供</h3><p>明确数据提供合法正当必要性、数据提供管理和技术措施重点评估内容</p>
+<blockquote>
+<p>针对故捆提供合法正当必要性,应重点评估:</p>
+<blockquote>
+<p>【合法正当必要性】数据对外提供的目的、方式、范围的合法性、正当性、必要性;<br>【合理明确性】数据提供的依据和目的是否合理、明确;<br>【合规性】数据提供是否遵守法律法规和监管政策要求，是否存在非法买卖、提供他人个人信息或重要数据行为;<br>【最小范围】对外提供的个人信息和重要数据范围，是否限于实现处理目的的最小范围。</p>
+</blockquote>
+<p>针对数据提供管理情况，应重点评估:</p>
+<blockquote>
+<p>【策略规程落实】数据提供安全策略和操作规程的建设落实情况;<br>【对外提供审批】数据对外提供的审批情况;<br>【对外提供评估】对外提供数据前，数据安全风险评估情况和个人信息保护影响评估情况;<br>【合同协议签订】签订合同协议情况，<strong>是否在合同协议中明确处理数据目的、方式、范围、数据安全保护措施、安全责任义务及罚则</strong>;<br>【高风险数据处理安全评估】开展<strong>共享、交易、委托处理、向境外提供数据等</strong>高风险数据处理活动前的安全评估情况;<br>【到期数据返还删除】监督数据接收方到期返还、删除数据的情况;<br>【境内数据提供至境外执法机构】向境外执法机构提供境内数据的情况;<br>【核心数据跨主体流动评估】核心数据跨主体流动前是否经过国家有关部门评估。</p>
+</blockquote>
+<p>针对数据提供技术措施情况,应重点评估:</p>
+<blockquote>
+<p>【加密有效性】<strong>对外提供的敏感数据是否进行加密及加密有效性</strong>;<br>【数据提供监控审计】对所<strong>提供数据及数据提供过程的监控审计</strong>情况;<br>【数据提供安全技术措施】对外提供数据时<strong>采取签名、添加水印、脱敏</strong>等安全措施情况;<br>【支撑数据安全溯源】跟踪记录数据流量、接收者信息及处理操作信息情况，记录日志是否完备、是否能够支撑数据安全事件溯源;<br>【数据提供安全保障措施】数据对外提供的安全保障措施及有效性;<br>【技术应用安全】多方安全计算、联邦学习等技术应用安全情况。</p>
+</blockquote>
+<p>针对数据接收方情况，应重点评估:</p>
+<blockquote>
+<p>【数据接收方情况】数据接收方的诚信状况、违法违规等情况;<br>【合法正当必要性】数据接收方处理数据的目的、方式、范围等的合法性、正当性、必要性;<br>【安全管理技术和责任义务】接收方是否承诺具备<strong>保障数据安全的管理、技术措施和能力</strong>并履行责任义务;<br>【数据保护能力】是否考核接收方的数据保护能力，掌握其发生的历史网络安全、数据安全事件处置情况;<br>【接收方监督情况】对接收方数据使用、再转移、对外提供和安全保护的监督情况。</p>
+</blockquote>
+<p>针对因合并、分立、解散、被宣告破产等原因向外转移数据，或承接其他数据处理者转移数据等场景，重点评估;</p>
+<blockquote>
+<p>【报告主管部门】是否向有关主管部门报告;<br>【数据转移方案】是否制定数据转移方案;<br>【接收方数据安全保障能力】接收方数据安全保障能力，<strong>是否满足数据转移后数据接收方不降低现有数据安全保护水平风险</strong>;<br>【没有接收方数据删除处理】没有接收方的,对相关数据删除处理情况。</p>
+</blockquote>
+<p>针对数据出境安全情况，重点评估:</p>
+<blockquote>
+<p>【数据出境场景梳理】数据出境场景梳理是否合理、完整，是否覆盖全部业务场景和产品类别;<br>【数据出境线路梳理】出境线路梳理是否合理、完整，是否覆盖公网出境、专线出境等情形;<br>【数据出境评估认证和合同签订】涉及数据出境的，按照有关规定<strong>开展数据出境安全评估、个人信息保护认证、个人信息出境标准合同签订</strong>的情况;<br>【公网出境核查】针对<strong>公网出境场景，监测核查实际出境数据是否与申报内容一致</strong>。</p>
+</blockquote>
+</blockquote>
+<h3 id="数据公开"><a href="#数据公开" class="headerlink" title="数据公开"></a>数据公开</h3><p>明确数据公开的适当性、数据公开管理重点评估内容</p>
+<blockquote>
+<p>针对数据公开适当性,应重点评估:</p>
+<blockquote>
+<p>【适当性】数据公开目的、方式、范围的适当性;<br>【一致性】数据公开目的、方式、范围与行政许可、合同授权的一致性;<br>【合规性】公开的数据内容与法律法规要求的符合程度;<br>【数据公开处理】对公开的数据进行必要的<strong>脱敏处理、数据水印、防爬取、权限控制</strong>情况;<br>【聚合性风险及关联推断】数据公开是否会带来聚合性风险;基于被评估对象的已公开数据，结合社会经验、自然知识或其他公开信息，尝试<strong>是否可以推断出涉密信息、被评估对象其他未曾公开的关联信息，或其他对国家安全、社会公共利益有影响的信息</strong>。</p>
+</blockquote>
+<p>针对数据公开管理情况,应重点评估:</p>
+<blockquote>
+<p>【数据公开制度落实】数据公开的安全制度、策略、操作规程和审核流程的建设落实情况;<br>【数据公开条件和批准】数据公开的条件、批准程序，涉及<strong>重大基础设施的信息公开是否经过主管部门批准</strong>，涉及<strong>个人信息公开是否取得个人单独同意</strong>;<br>【数据公开安全评估】数据公开前的安全评估情况，是否事前<strong>评估数据公开条件、环境、权限、内容等风险</strong>;<br>【不宜公开的已公开数据处置】因法律法规、监管政策的更新，对不宜公开的已公开数据的处置情况;<br>【数据公开控制措施】对公开数据的<strong>脱敏处理、防爬取、数字水印</strong>等控制措施。</p>
+</blockquote>
+</blockquote>
+<h3 id="数据删除"><a href="#数据删除" class="headerlink" title="数据删除"></a>数据删除</h3><p>明确数据删除管理、存储介质销毁和其他重点评估内容</p>
+<blockquote>
+<p>针对数据删除管理情况，应重点评估:</p>
+<blockquote>
+<p>【数据删除流程和审批】数据删除流程和审批机制的建设落实情况;<br>【数据删除策略规程】数据删除安全策略和操作规程，是否<strong>明确数据销毁对象、原因、销毁方式和销毁要求及对应操作规程</strong>;<br>【及时删除数据】是否按照法律法规、合同约定、隐私政策等及时删除数据;<br>【委托第三方数据删除】委托第三方进行数据处理的，是否在<strong>委托结束后监督第三方删除或返还数据</strong>;<br>【数据删除有效性和彻底性验证】数据删除有效性、彻底性验证情况，以及可能存在的多副本同步删除情况;<br>【数据存储到期删除】是否明确数据存储期限，并于<strong>存储期限到期后按期删除数据，明确不可删除数据的类型及原因</strong>;<br>【缓存备份数据删除】缓存数据、到期备份数据的删除情况。</p>
+</blockquote>
+<p>针对存储介质销毁情况,应重点评估:</p>
+<blockquote>
+<p>【存储介质销毁制度】存储介质销毁管理制度和审批机制的建设落实情况;<br>【介质销毁策略规程】介质销毁策略和操作规程，是否<strong>明确各类介质的销毁流程、方式和要求</strong>，是否妥善处置销毁的存储介质;<br>【存储介质销毁监控记录】存储介质销毁过程的监控、记录情况;<br>【软硬件资产管理】软硬件资产维护、报废、销毁管理情况等;<br>【介质销毁措施有效性】介质销毁措施有效性，是否<strong>对被销毁的存储介质进行数据恢复验证</strong>;<br>【按数据分类分级销毁】是否按照数据分类分级，<strong>明确不同级别数据适当的删除措施，核心数据删除是否采用存储介质销毁方式</strong>。</p>
+</blockquote>
+</blockquote>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>对于即时通信、快递物流、网上购物、网络支付、网络音视频、汽车、网络预约汽车服务等数据处理活动的评估，可参照相应国家标准、行业标准的具体细化要求评估风险。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://caiwl.github.io">cwlyeye</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://caiwl.github.io/post/b4fd19cd.html">https://caiwl.github.io/post/b4fd19cd.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://caiwl.github.io" target="_blank">不来也不去</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/DATA-SECURITY/">DATA SECURITY</a></div><div class="post_share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/post/4e37656c.html" title="SQLSEVER_Audit"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">SQLSEVER_Audit</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/f49f589d.html" title="DatabaseCommand"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-16</div><div class="title">DatabaseCommand</div></div></a></div><div><a href="/post/4e37656c.html" title="SQLSEVER_Audit"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-16</div><div class="title">SQLSEVER_Audit</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">cwlyeye</div><div class="author-info__description">相逢的意义在于彼此照亮</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/rieraa"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/cwl001" target="_blank" title="Github"><i class="fab fa-github" style="color: #hdhfbb;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog<div class="xpand" style="height:200px;"><canvas class="illo" width="800" height="800" style="max-width: 200px; max-height: 200px; touch-action: none; width: 640px; height: 640px;"></canvas></div></div><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople1.js"></script><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/zdog.dist.js"></script><script id="rendered-js" src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople.js"></script><style>.card-widget.card-announcement {
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+canvas {
+    display: block;
+    margin: 0 auto;
+    cursor: move;
+}</style></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%8C%83%E5%9B%B4"><span class="toc-number">1.</span> <span class="toc-text">范围</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%AF%E8%AF%AD%E5%AE%9A%E4%B9%89"><span class="toc-number">2.</span> <span class="toc-text">术语定义</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A3%8E%E9%99%A9%E8%AF%84%E4%BC%B0%E6%A6%82%E8%BF%B0"><span class="toc-number">3.</span> <span class="toc-text">风险评估概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E6%80%9D%E8%B7%AF"><span class="toc-number">3.1.</span> <span class="toc-text">评估思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E5%86%85%E5%AE%B9"><span class="toc-number">3.2.</span> <span class="toc-text">评估内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E6%B5%81%E7%A8%8B"><span class="toc-number">3.3.</span> <span class="toc-text">评估流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E6%89%8B%E6%AE%B5"><span class="toc-number">3.4.</span> <span class="toc-text">评估手段</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E5%87%86%E5%A4%87"><span class="toc-number">4.</span> <span class="toc-text">评估准备</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%8E%E7%A1%AE%E8%AF%84%E4%BC%B0%E7%9B%AE%E6%A0%87"><span class="toc-number">4.1.</span> <span class="toc-text">明确评估目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A1%AE%E5%AE%9A%E8%AF%84%E4%BC%B0%E8%8C%83%E5%9B%B4"><span class="toc-number">4.2.</span> <span class="toc-text">确定评估范围</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E5%BB%BA%E8%AF%84%E4%BC%B0%E5%9B%A2%E9%98%9F"><span class="toc-number">4.3.</span> <span class="toc-text">组建评估团队</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%B1%95%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87"><span class="toc-number">4.4.</span> <span class="toc-text">开展前期准备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E5%AE%9A%E5%B7%A5%E4%BD%9C%E8%AE%A1%E5%88%92"><span class="toc-number">4.4.1.</span> <span class="toc-text">指定工作计划</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AE%E5%AE%9A%E8%AF%84%E4%BC%B0%E4%BE%9D%E6%8D%AE"><span class="toc-number">4.4.2.</span> <span class="toc-text">确定评估依据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AE%E5%AE%9A%E8%AF%84%E4%BC%B0%E5%86%85%E5%AE%B9"><span class="toc-number">4.4.3.</span> <span class="toc-text">确定评估内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%BA%E7%AB%8B%E8%AF%84%E4%BC%B0%E6%96%87%E6%A1%A3"><span class="toc-number">4.4.4.</span> <span class="toc-text">建立评估文档</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%B6%E5%AE%9A%E9%A3%8E%E9%99%A9%E8%AF%84%E4%BC%B0%E6%96%B9%E6%A1%88"><span class="toc-number">4.5.</span> <span class="toc-text">制定风险评估方案</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E8%B0%83%E7%A0%94"><span class="toc-number">5.</span> <span class="toc-text">信息调研</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E8%80%85%E8%B0%83%E7%A0%94"><span class="toc-number">5.1.</span> <span class="toc-text">数据处理者调研</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%9A%E5%8A%A1%E5%92%8C%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%A0%94"><span class="toc-number">5.2.</span> <span class="toc-text">业务和信息系统调研</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%B5%84%E4%BA%A7%E8%B0%83%E7%A0%94"><span class="toc-number">5.3.</span> <span class="toc-text">数据资产调研</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%B4%BB%E5%8A%A8%E8%B0%83%E7%A0%94"><span class="toc-number">5.4.</span> <span class="toc-text">数据处理活动调研</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%8E%AA%E6%96%BD%E8%B0%83%E7%A0%94"><span class="toc-number">5.5.</span> <span class="toc-text">安全措施调研</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A3%8E%E9%99%A9%E8%AF%86%E5%88%AB"><span class="toc-number">6.</span> <span class="toc-text">风险识别</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86"><span class="toc-number">6.1.</span> <span class="toc-text">数据安全管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86%E5%88%B6%E5%BA%A6"><span class="toc-number">6.1.1.</span> <span class="toc-text">安全管理制度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E7%BB%84%E7%BB%87%E6%9C%BA%E6%9E%84"><span class="toc-number">6.1.2.</span> <span class="toc-text">安全组织机构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%B1%BB%E5%88%86%E7%BA%A7%E7%AE%A1%E7%90%86"><span class="toc-number">6.1.3.</span> <span class="toc-text">分类分级管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%BA%E5%91%98%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86"><span class="toc-number">6.1.4.</span> <span class="toc-text">人员安全管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%88%E4%BD%9C%E5%A4%96%E5%8C%85%E7%AE%A1%E7%90%86"><span class="toc-number">6.1.5.</span> <span class="toc-text">合作外包管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E5%A8%81%E8%83%81%E5%92%8C%E5%BA%94%E6%80%A5%E7%AE%A1%E7%90%86"><span class="toc-number">6.1.6.</span> <span class="toc-text">安全威胁和应急管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E8%BF%90%E7%BB%B4%E7%AE%A1%E7%90%86"><span class="toc-number">6.1.7.</span> <span class="toc-text">开发运维管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%91%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8"><span class="toc-number">6.1.8.</span> <span class="toc-text">云数据安全</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%B4%BB%E5%8A%A8"><span class="toc-number">6.2.</span> <span class="toc-text">数据处理活动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%94%B6%E9%9B%86"><span class="toc-number">6.2.1.</span> <span class="toc-text">数据收集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8"><span class="toc-number">6.2.2.</span> <span class="toc-text">数据存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93"><span class="toc-number">6.2.3.</span> <span class="toc-text">数据传输</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E4%BD%BF%E7%94%A8%E5%92%8C%E5%8A%A0%E5%B7%A5"><span class="toc-number">6.2.4.</span> <span class="toc-text">数据使用和加工</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%8F%90%E4%BE%9B"><span class="toc-number">6.2.5.</span> <span class="toc-text">数据提供</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%85%AC%E5%BC%80"><span class="toc-number">6.2.6.</span> <span class="toc-text">数据公开</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%88%A0%E9%99%A4"><span class="toc-number">6.2.7.</span> <span class="toc-text">数据删除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-number">6.2.8.</span> <span class="toc-text">其他</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/b4fd19cd.html" title="DataScurity_assessment">DataScurity_assessment</a><time datetime="2023-10-16T06:34:28.000Z" title="发表于 2023-10-16 14:34:28">2023-10-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/4e37656c.html" title="SQLSEVER_Audit">SQLSEVER_Audit</a><time datetime="2023-10-16T05:41:54.000Z" title="发表于 2023-10-16 13:41:54">2023-10-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/f49f589d.html" title="DatabaseCommand">DatabaseCommand</a><time datetime="2023-10-16T05:15:20.000Z" title="发表于 2023-10-16 13:15:20">2023-10-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/4a17b156.html" title="WELCOME TO MY BLOG ❗❗❗❗">WELCOME TO MY BLOG ❗❗❗❗</a><time datetime="2023-10-14T08:33:50.276Z" title="发表于 2023-10-14 16:33:50">2023-10-14</time></div></div></div></div></div></div></main><footer id="footer" style="background: linear-gradient(45deg, #001f3f, #284165, #59341a, #820224)"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By cwlyeye</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><!--a.icon-V.hidden(onclick='switchNightMode()',  title=_p('rightside.night_mode_title'))--><!--    svg(width='25', height='25', viewBox='0 0 1024 1024')--><!--        use#modeicon(xlink:href='#icon-moon')--><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
