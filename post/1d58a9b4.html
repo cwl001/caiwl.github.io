@@ -1,0 +1,303 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Interpretation of DSMM | 伟大并非凑巧</title><meta name="author" content="cwlyeye"><meta name="copyright" content="cwlyeye"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="数据安全能力成熟度模型的学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Interpretation of DSMM">
+<meta property="og:url" content="https://caiwl.github.io/post/1d58a9b4.html">
+<meta property="og:site_name" content="伟大并非凑巧">
+<meta property="og:description" content="数据安全能力成熟度模型的学习">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://caiwl.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2024-07-24T07:47:07.000Z">
+<meta property="article:modified_time" content="2024-07-24T08:54:15.018Z">
+<meta property="article:author" content="cwlyeye">
+<meta property="article:tag" content="DATA SECURITY">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://caiwl.github.io/img/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://caiwl.github.io/post/1d58a9b4.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Interpretation of DSMM',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-07-24 16:54:15'
+}</script><!--include ./head/noscript.pug--><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 0 || hour >= 1
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/universe.css"><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><link rel="stylesheet" href="/css/transpancy.css"><div class="aplayer no-destroy" data-id="2023610632" data-server="netease"  data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="list" data-preload="none" data-autoplay="false" muted></div><svg aria-hidden="true" style="position:absolute; overflow:hidden; width:0; height:0"><symbol id="icon-sun" viewBox="0 0 1024 1024"><path d="M960 512l-128 128v192h-192l-128 128-128-128H192v-192l-128-128 128-128V192h192l128-128 128 128h192v192z" fill="#FFD878" p-id="8420"></path><path d="M736 512a224 224 0 1 0-448 0 224 224 0 1 0 448 0z" fill="#FFE4A9" p-id="8421"></path><path d="M512 109.248L626.752 224H800v173.248L914.752 512 800 626.752V800h-173.248L512 914.752 397.248 800H224v-173.248L109.248 512 224 397.248V224h173.248L512 109.248M512 64l-128 128H192v192l-128 128 128 128v192h192l128 128 128-128h192v-192l128-128-128-128V192h-192l-128-128z" fill="#4D5152" p-id="8422"></path><path d="M512 320c105.888 0 192 86.112 192 192s-86.112 192-192 192-192-86.112-192-192 86.112-192 192-192m0-32a224 224 0 1 0 0 448 224 224 0 0 0 0-448z" fill="#4D5152" p-id="8423"></path></symbol><symbol id="icon-moon" viewBox="0 0 1024 1024"><path d="M611.370667 167.082667a445.013333 445.013333 0 0 1-38.4 161.834666 477.824 477.824 0 0 1-244.736 244.394667 445.141333 445.141333 0 0 1-161.109334 38.058667 85.077333 85.077333 0 0 0-65.066666 135.722666A462.08 462.08 0 1 0 747.093333 102.058667a85.077333 85.077333 0 0 0-135.722666 65.024z" fill="#FFB531" p-id="11345"></path><path d="M329.728 274.133333l35.157333-35.157333a21.333333 21.333333 0 1 0-30.165333-30.165333l-35.157333 35.157333-35.114667-35.157333a21.333333 21.333333 0 0 0-30.165333 30.165333l35.114666 35.157333-35.114666 35.157334a21.333333 21.333333 0 1 0 30.165333 30.165333l35.114667-35.157333 35.157333 35.157333a21.333333 21.333333 0 1 0 30.165333-30.165333z" fill="#030835" p-id="11346"></path></symbol></svg><meta name="generator" content="Hexo 6.3.0"></head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="/css/progress_bar.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">25</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> Manifest</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> music</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> photo</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: linear-gradient(45deg, #001f3f, #284165, #59341a, #820224)"><nav id="nav"><span id="blog-info"><a href="/" title="伟大并非凑巧"></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> Manifest</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> music</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> photo</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Interpretation of DSMM</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-24T07:47:07.000Z" title="发表于 2024-07-24 15:47:07">2024-07-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-24T08:54:15.018Z" title="更新于 2024-07-24 16:54:15">2024-07-24</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/DATA-SECURITY/">DATA SECURITY</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Interpretation of DSMM"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="DSMM的简介"><a href="#DSMM的简介" class="headerlink" title="DSMM的简介"></a>DSMM的简介</h1><h2 id="什么是DSMM"><a href="#什么是DSMM" class="headerlink" title="什么是DSMM"></a>什么是DSMM</h2><p>DSMM是Data Security capability MaturityModel的缩写，中文名为数据安全能力成熟度模型。是以2019-08-30 发布，2020-03-01 实施的GB&#x2F;T 37988-2019 《信息安全技术数据安全能力成熟度模型》为依据的数据安全保护体系。</p>
+<h2 id="DSMM能做什么"><a href="#DSMM能做什么" class="headerlink" title="DSMM能做什么"></a>DSMM能做什么</h2><p>DSMM是我国在数据管理领域首个正式发布的国家标准。DCMM标准以组织为评估对象，DCMM数据管理能力成熟度评估模型定义了数据战略、数据治理、数据架构、数据应用、数据安全、数据质量、数据标准和数据生存周期八个核心能力域及28个能力项，并以组织、制度、流程和技术作为八个核心域评价维度。帮助企业利用先进的数据管理理念和方法，建立和评价自身数据管理能力，持续完善数据管理组织、程序和制度，充分发挥数据在促进企业向信息化、数字化、智能化发展方面的价值。</p>
+<h2 id="DSMM的建设依据"><a href="#DSMM的建设依据" class="headerlink" title="DSMM的建设依据"></a>DSMM的建设依据</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://caiwl.oss-cn-chengdu.aliyuncs.com/240724/image1.jpg" alt="IMG_256"><br>GB&#x2F;T 37988-2019 《信息安全技术数据安全能力成熟度模型》<br>本标准给出了组织数据安全能力的成熟度模型架构，规定了数据采集安全、数据传输安全、数据存储安全、数据处理安全、数据交换安全、数据销毁安全、通用安全的成熟度等级要求。<br>本标准适用于对组织数据安全能力进行评估，也可作为组织开展数据安全能力建设时的依据。</p>
+<h2 id="实施DSMM的意义"><a href="#实施DSMM的意义" class="headerlink" title="实施DSMM的意义"></a>实施DSMM的意义</h2><p>DSMM 标准可为组织在不同阶段，开展数据保护建设，提供分级别的实践指南。通过实施DSMM评估，可以：</p>
+<blockquote>
+<p>  1、促进组织机构了解并提升自身的数据安全水平，从数据生命周期的角度出发，结合各类数据业务发展所体现的安全需求开展数据安全保障工作；<br>  2、保障数据在组织机构之间安全地交换与共享，充分发挥数据的价值，打造更安全的大数据应用环境。</p>
+</blockquote>
+<h2 id="DSMM、ISO27001、等保之间的区别"><a href="#DSMM、ISO27001、等保之间的区别" class="headerlink" title="DSMM、ISO27001、等保之间的区别"></a>DSMM、ISO27001、等保之间的区别</h2><blockquote>
+<p>等保标准以备案系统为主要评估对象，偏向传统网络系统安全，侧重于物理安全、网络安全、安全建设管理等方面的网络系统安全保护。<br>ISO27001标准是以组织为对象，偏向信息安全管理，侧重于指导组织依据信息安全风险评估的结果选择合适的控制措施，设计构建信息安全管理体系。<br>DSMM标准也是以组织为评估对象，聚焦数据全生命周期的防护，从四个安全能力维度提出分级要求，帮助组织打造与业务贴合紧密的数据安全架构。<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://caiwl.oss-cn-chengdu.aliyuncs.com/240724/image2.jpg" alt="IMG_256"></p>
+</blockquote>
+<h1 id="DSMM数据安全能力成熟度模型架构"><a href="#DSMM数据安全能力成熟度模型架构" class="headerlink" title="DSMM数据安全能力成熟度模型架构"></a>DSMM数据安全能力成熟度模型架构</h1><h2 id="DSMM的三个维度"><a href="#DSMM的三个维度" class="headerlink" title="DSMM的三个维度"></a>DSMM的三个维度</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://caiwl.oss-cn-chengdu.aliyuncs.com/240724/image3.jpg" alt="IMG_256"></p>
+<blockquote>
+<p>安全能力维度<br>安全能力维度明确了组织在数据安全领域应具备的能力,包括组织建设、制度流程、技术工具和人员能力。<br>能力成熟度等级维度<br>数据安全能力成熟度等级划分为五级,具体包括:1级是非正式执行级,2级是计划跟踪级,3级是充分定义级,4级是量化控制级,5级是持续优化级。<br>数据安全过程维度</p>
+<blockquote>
+<p>数据安全过程包括数据生存周期安全过程和通用安全过程;<br>数据生存周期安全过程具体包括:数据采集安全、数据传输安全、数据存储安全、数据处理安全、数据交换安全、数据销毁安全6个阶段。</p>
+</blockquote>
+</blockquote>
+<h3 id="安全能力维度"><a href="#安全能力维度" class="headerlink" title="安全能力维度"></a>安全能力维度</h3><p>通过对组织各数据安全过程应具备安全能力的量化,进而评估每项安全过程的实现能力。安全能力分为以下4个方面:</p>
+<blockquote>
+<p>组织建设:数据安全组织的设立、职责分配和沟通协作</p>
+<blockquote>
+<p>数据安全组织架构对组织业务的适用性<br>数据安全组织承担的工作职责的明确性<br>数据安全组织运作、沟通协调的有效性</p>
+</blockquote>
+<p>制度流程:组织数据安全领域的制度和流程执行</p>
+<blockquote>
+<p>数据生存周期关键控制节点授权审批流程的明确性<br>相关流程制度的制定、发布、修订的规范性<br>制度流程实施的一致性和有效性</p>
+</blockquote>
+<p>技术工具:通过技术手段和产品工具落实安全要求或自动化实现安全工作</p>
+<blockquote>
+<p>数据安全技术在数据全生存周期过程中的利用情况,应对数据全生存周期安全风险的能力<br>利用技术工具对数据安全工作的自动化支持能力,对数据安全制度流程固化执行的实现能力</p>
+</blockquote>
+<p>人员能力:执行数据安全工作的人员的安全意识及相关专业能力。</p>
+<blockquote>
+<p>数据安全人员所具备的数据安全技能是否能够满足实现安全目标的能力要求(对数据相关业务的理解程度以及数据安全专业能力)<br>数据安全人员的数据安全意识以及对关键数据安全岗位员工数据安全能力的培养</p>
+</blockquote>
+</blockquote>
+<h3 id="能力成熟度等级维度"><a href="#能力成熟度等级维度" class="headerlink" title="能力成熟度等级维度"></a>能力成熟度等级维度</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://caiwl.oss-cn-chengdu.aliyuncs.com/240724/image4.jpg" alt="IMG_256"></p>
+<blockquote>
+<p>L1非正式执行：执行非正式过程，随机、无序、被动执行安全过程，依赖个人经验，无法复制。<br>L2计划跟踪：在业务系统级别主动实现了安全过程的计划与执行，但没有形成体系化，可验证过程执行与计划一致， 跟踪、控制执行的进展。<br>L3充分定义：在组织级别实现了安全过程的规范执行，标准过程进行制度化，过程可重复执行，执行结果可核查。<br>L4量化控制：建立了量化目标，安全过程可度量。<br>L5持续优化：根据组织的整体目标，不断改进和优化组织能力和安全过程有效性。</p>
+</blockquote>
+<h3 id="数据安全过程维度"><a href="#数据安全过程维度" class="headerlink" title="数据安全过程维度"></a>数据安全过程维度</h3><p>数据安全过程维度则从两个层面考量：</p>
+<blockquote>
+<p>数据安全过程包括数据生存周期安全过程和通用安全过程；</p>
+</blockquote>
+<p>数据安全PA体系<br>分为数据生存周期安全过程和通用安全过程两个部分<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://caiwl.oss-cn-chengdu.aliyuncs.com/240724/image5.jpg" alt="IMG_256"></p>
+<p><strong>数据生存周期安全过程域：</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a) 数据采集安全的 PA(PA01~PA04)包括:数据分类分级、数据采集安全管理、数据源鉴别及记录、数据质量管理4个PA;</span><br><span class="line">b) 数据传输安全的 PA(PA05-PA06)包括:数据传输加密、网络可用性管理2个PA;</span><br><span class="line">c) 数据存储安全的 PA(PA07-PA09)包括:存储媒体安全、逻辑存储安全、数据备份和恢复3个安全 PA;</span><br><span class="line">d) 数据处理安全的 PA(PA10~PA14)包括:数据脱敏、数据分析安全、数据正当使用、数据处理环境安全、数据导人导出安全5个安全PA;</span><br><span class="line">e) 数据交换安全的 PA(PA15-PA17)包括:数据共享安全、数据发布安全、数据接口安全3个安全 PA;</span><br><span class="line">f) 数据销毁安全的 PA(PA18-PA19)包括,数据销毁处置,存储媒体销毁处置2个安全 PA。</span><br></pre></td></tr></table></figure>
+<p><strong>通用过程安全域：</strong><br>数据安全策略规划、组织和人员管理、合规管理、数据资产管理、数据供应链安全、元数据管理、终端数据安全、监控与审计、鉴别与访问控制、需求分析、安全事件应急 11个 PA。</p>
+<blockquote>
+<p>数据生存周期安全过程具体包括：数据采集安全、数据传输安全、数据存储安全、数据处理安全、数据交换安全、数据销毁安全6个阶段。</p>
+</blockquote>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-数据采集：指在组织机构内部系统中新生成数据，以及从外部收集数据的阶段。</span><br><span class="line"></span><br><span class="line">-数据传输：指数据在组织机构内部从一个实体通过网络流动到另一个实体的阶段。</span><br><span class="line"></span><br><span class="line">-数据存储：指数据以任何数字格式进行物理存储或云存储的阶段。</span><br><span class="line"></span><br><span class="line">-数据处理：指组织机构在内部针对数据进行计算、分析、可视化等操作的阶段。</span><br><span class="line"></span><br><span class="line">-数据交换：指数据由组织机构与外部组织机构及个人交互的阶段。</span><br><span class="line"></span><br><span class="line">-数据销毁：指通过对数据及数据的存储介质通过相应的操作手段，使数据彻底消除且无法通过任何手段恢复的过程。</span><br></pre></td></tr></table></figure>
+
+<h2 id="DSMM贯标流程"><a href="#DSMM贯标流程" class="headerlink" title="DSMM贯标流程"></a>DSMM贯标流程</h2><p>STEP1 差距分析 -&gt; STEP2 能力建设 -&gt; STEP3 测量评估<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://caiwl.oss-cn-chengdu.aliyuncs.com/240724/image9.jpg" alt="IMG_256"></p>
+<h2 id="DSMM评价方法"><a href="#DSMM评价方法" class="headerlink" title="DSMM评价方法"></a>DSMM评价方法</h2><p>DSMM的评价方法主要是评分制，先对每个过程域(PA)的四个能力维度(BP)进行打分，再通过计算平均分、修正分值的方式得到最终的PA分值，最终得到整体的综合得分。<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://caiwl.oss-cn-chengdu.aliyuncs.com/240724/image8.jpg" alt="IMG_256"></p>
+<h3 id="DSMM评估方式"><a href="#DSMM评估方式" class="headerlink" title="DSMM评估方式"></a>DSMM评估方式</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(1)文档审核:由被评价组织输入与数据安全相关的文档材料(如数据 安全的方针政策、制度规范流程、培训教育材料、以及 与产品技术相关的设计实施方案、配置说明、运行记录 和其他配套表单)、审核小组审核相关的文档材料是否 已涵盖完整数据生存周期的PA和控制项</span><br><span class="line">(2)配置检查:根据被审核方提供的技术材料，登陆相关的系统工具 平台，检査配置是否与材料保持一致，对文档审核内容进行核实。</span><br><span class="line">(3)工具测试:利用技术工具对系统工具进行测试，验证是 否符合数据安全成熟度模型特定等级的技术 能力要求，也可采信第三方的测试报告。</span><br><span class="line">(4)旁站式验证:审核人员在现场通过实地观察人员行为、技术设施和环境状况判断人员的安全意识、业务操作、管理程序等方面的安全情况。</span><br><span class="line">(5)人员访谈:通过访谈的方式与被审核方进行交流、讨论 等活动，获取相关证据，了解有关信息。</span><br></pre></td></tr></table></figure>
+
+<h2 id="如何核查DSMM证书的有效性和公正性"><a href="#如何核查DSMM证书的有效性和公正性" class="headerlink" title="如何核查DSMM证书的有效性和公正性"></a>如何核查DSMM证书的有效性和公正性</h2><p>可通过<a target="_blank" rel="noopener" href="http://cx.cnca.cn/CertECloud/index/index/page">国家市场监督管理总局全国认证认可信息公共服务平台</a>查询证书详情，并核查验证证书的有效性。</p>
+<h2 id="贵阳市DSMM补贴"><a href="#贵阳市DSMM补贴" class="headerlink" title="贵阳市DSMM补贴"></a>贵阳市DSMM补贴</h2><p>支持企业提升管理能力。对首次通过软件能力成熟度模型集成（CMMI）3级及以上、数据管理能力成熟度评估模型（DCMM）2级及以上、数据安全能力成熟度模型（DSMM）2级及以上认证，且证书在有效期内的企业，CMMI认证按3级、4级、5级分别给予一次性10万元、20万元、30万元资金支持；DCMM认证按2级、3级、4级及以上分别给予一次性10万元、20万元、30万元资金支持；DSMM2级及以上认证给予一次性30万元资金支持。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://caiwl.github.io">cwlyeye</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://caiwl.github.io/post/1d58a9b4.html">https://caiwl.github.io/post/1d58a9b4.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://caiwl.github.io" target="_blank">伟大并非凑巧</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/DATA-SECURITY/">DATA SECURITY</a></div><div class="post_share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/post/6e30efc0.html" title="vulnhub-DC9"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">vulnhub-DC9</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/b4fd19cd.html" title="DataSecurity_assessment"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-16</div><div class="title">DataSecurity_assessment</div></div></a></div><div><a href="/post/f49f589d.html" title="DatabaseCommand"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-16</div><div class="title">DatabaseCommand</div></div></a></div><div><a href="/post/4e37656c.html" title="SQLSEVER_Audit"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-16</div><div class="title">SQLSEVER_Audit</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">cwlyeye</div><div class="author-info__description">相逢的意义在于彼此照亮</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">25</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/rieraa"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/cwl001" target="_blank" title="Github"><i class="fab fa-github" style="color: #hdhfbb;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog<div class="xpand" style="height:200px;"><canvas class="illo" width="800" height="800" style="max-width: 200px; max-height: 200px; touch-action: none; width: 640px; height: 640px;"></canvas></div></div><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople1.js"></script><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/zdog.dist.js"></script><script id="rendered-js" src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople.js"></script><style>.card-widget.card-announcement {
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+canvas {
+    display: block;
+    margin: 0 auto;
+    cursor: move;
+}</style></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#DSMM%E7%9A%84%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">DSMM的简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFDSMM"><span class="toc-number">1.1.</span> <span class="toc-text">什么是DSMM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DSMM%E8%83%BD%E5%81%9A%E4%BB%80%E4%B9%88"><span class="toc-number">1.2.</span> <span class="toc-text">DSMM能做什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DSMM%E7%9A%84%E5%BB%BA%E8%AE%BE%E4%BE%9D%E6%8D%AE"><span class="toc-number">1.3.</span> <span class="toc-text">DSMM的建设依据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E6%96%BDDSMM%E7%9A%84%E6%84%8F%E4%B9%89"><span class="toc-number">1.4.</span> <span class="toc-text">实施DSMM的意义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DSMM%E3%80%81ISO27001%E3%80%81%E7%AD%89%E4%BF%9D%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.5.</span> <span class="toc-text">DSMM、ISO27001、等保之间的区别</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DSMM%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E8%83%BD%E5%8A%9B%E6%88%90%E7%86%9F%E5%BA%A6%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84"><span class="toc-number">2.</span> <span class="toc-text">DSMM数据安全能力成熟度模型架构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#DSMM%E7%9A%84%E4%B8%89%E4%B8%AA%E7%BB%B4%E5%BA%A6"><span class="toc-number">2.1.</span> <span class="toc-text">DSMM的三个维度</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E8%83%BD%E5%8A%9B%E7%BB%B4%E5%BA%A6"><span class="toc-number">2.1.1.</span> <span class="toc-text">安全能力维度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%83%BD%E5%8A%9B%E6%88%90%E7%86%9F%E5%BA%A6%E7%AD%89%E7%BA%A7%E7%BB%B4%E5%BA%A6"><span class="toc-number">2.1.2.</span> <span class="toc-text">能力成熟度等级维度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E8%BF%87%E7%A8%8B%E7%BB%B4%E5%BA%A6"><span class="toc-number">2.1.3.</span> <span class="toc-text">数据安全过程维度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DSMM%E8%B4%AF%E6%A0%87%E6%B5%81%E7%A8%8B"><span class="toc-number">2.2.</span> <span class="toc-text">DSMM贯标流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DSMM%E8%AF%84%E4%BB%B7%E6%96%B9%E6%B3%95"><span class="toc-number">2.3.</span> <span class="toc-text">DSMM评价方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DSMM%E8%AF%84%E4%BC%B0%E6%96%B9%E5%BC%8F"><span class="toc-number">2.3.1.</span> <span class="toc-text">DSMM评估方式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%A0%B8%E6%9F%A5DSMM%E8%AF%81%E4%B9%A6%E7%9A%84%E6%9C%89%E6%95%88%E6%80%A7%E5%92%8C%E5%85%AC%E6%AD%A3%E6%80%A7"><span class="toc-number">2.4.</span> <span class="toc-text">如何核查DSMM证书的有效性和公正性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%B5%E9%98%B3%E5%B8%82DSMM%E8%A1%A5%E8%B4%B4"><span class="toc-number">2.5.</span> <span class="toc-text">贵阳市DSMM补贴</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/1d58a9b4.html" title="Interpretation of DSMM">Interpretation of DSMM</a><time datetime="2024-07-24T07:47:07.000Z" title="发表于 2024-07-24 15:47:07">2024-07-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/6e30efc0.html" title="vulnhub-DC9">vulnhub-DC9</a><time datetime="2024-07-03T06:30:58.000Z" title="发表于 2024-07-03 14:30:58">2024-07-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/c49febc3.html" title="vulnhub-DC8">vulnhub-DC8</a><time datetime="2024-07-02T06:30:58.000Z" title="发表于 2024-07-02 14:30:58">2024-07-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/5420f652.html" title="vulnhub-DC7">vulnhub-DC7</a><time datetime="2024-06-02T08:26:34.000Z" title="发表于 2024-06-02 16:26:34">2024-06-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/2327c6c4.html" title="vulnhub-DC6">vulnhub-DC6</a><time datetime="2024-05-20T07:10:09.000Z" title="发表于 2024-05-20 15:10:09">2024-05-20</time></div></div></div></div></div></div></main><footer id="footer" style="background: linear-gradient(45deg, #001f3f, #284165, #59341a, #820224)"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By cwlyeye</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><!--a.icon-V.hidden(onclick='switchNightMode()',  title=_p('rightside.night_mode_title'))--><!--    svg(width='25', height='25', viewBox='0 0 1024 1024')--><!--        use#modeicon(xlink:href='#icon-moon')--><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
